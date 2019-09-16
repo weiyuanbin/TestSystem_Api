@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain.Entity">
+	<class  name="T_ClassPaper" table="T_ClassPaper" lazy="true">
+		<id name="ClassPaperID" type="Int32">
+			<generator class="identity" />
+		</id>
+		<property name="IsDeleted" type="Boolean">
+			<column name="IsDeleted" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="CreateDate" type="DateTime">
+			<column name="CreateDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<many-to-one name="Class" class="Domain.Entity.T_Class, Domain">
+			<column name="ClassID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="Paper" class="Domain.Entity.T_Paper, Domain">
+			<column name="PaperID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

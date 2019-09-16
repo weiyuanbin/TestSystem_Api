@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain.Entity">
+	<class  name="T_Paper" table="T_Paper" lazy="true">
+		<id name="PaperID" type="Int32">
+			<generator class="identity" />
+		</id>
+		<property name="PaperName" type="String">
+			<column name="PaperName" length="100" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="PaperMode" type="Int32">
+			<column name="PaperMode" length="4" sql-type="int" not-null="true"/>
+		</property>
+		<property name="AnswerMode" type="Int32">
+			<column name="AnswerMode" length="4" sql-type="int" not-null="true"/>
+		</property>
+		<property name="StartTime" type="DateTime">
+			<column name="StartTime" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="EndTime" type="DateTime">
+			<column name="EndTime" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="Duration" type="Int32">
+			<column name="Duration" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="RuleDes" type="String">
+			<column name="RuleDes" length="16" sql-type="text" not-null="false"/>
+		</property>
+		<property name="OperationDes" type="String">
+			<column name="OperationDes" length="16" sql-type="text" not-null="false"/>
+		</property>
+		<property name="Status" type="Boolean">
+			<column name="Status" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="IsDeleted" type="Boolean">
+			<column name="IsDeleted" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="CreateDate" type="DateTime">
+			<column name="CreateDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<many-to-one name="Administrator" class="Domain.Entity.T_Administrator, Domain">
+			<column name="AdministratorID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="PaperType" class="Domain.Entity.T_PaperType, Domain">
+			<column name="PaperTypeID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain.Entity">
+	<class  name="T_Question" table="T_Question" lazy="true">
+		<id name="QuestionID" type="Int32">
+			<generator class="identity" />
+		</id>
+		<property name="Stem" type="String">
+			<column name="Stem" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="OptionA" type="String">
+			<column name="OptionA" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="OptionB" type="String">
+			<column name="OptionB" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="OptionC" type="String">
+			<column name="OptionC" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="OptionD" type="String">
+			<column name="OptionD" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="OptionE" type="String">
+			<column name="OptionE" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="OptionF" type="String">
+			<column name="OptionF" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Answer" type="String">
+			<column name="Answer" length="1000" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="IsDeleted" type="Boolean">
+			<column name="IsDeleted" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="CreateDate" type="DateTime">
+			<column name="CreateDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<many-to-one name="Administrator" class="Domain.Entity.T_Administrator, Domain">
+			<column name="AdministratorID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="QuestionLabel" class="Domain.Entity.T_QuestionLabel, Domain">
+			<column name="QuestionLabelID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="QuestionType" class="Domain.Entity.T_QuestionType, Domain">
+			<column name="QuestionTypeID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain.Entity">
+	<class  name="T_PaperRecord" table="T_PaperRecord" lazy="true">
+		<id name="PaperRecordID" type="Int32">
+			<generator class="identity" />
+		</id>
+		<property name="AnswerCount" type="Int32">
+			<column name="AnswerCount" length="4" sql-type="int" not-null="true"/>
+		</property>
+		<property name="Answer" type="String">
+			<column name="Answer" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Score" type="Decimal">
+			<column name="Score" length="5" sql-type="decimal" not-null="true"/>
+		</property>
+		<property name="IsDeleted" type="Boolean">
+			<column name="IsDeleted" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="CreateDate" type="DateTime">
+			<column name="CreateDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<many-to-one name="Paper" class="Domain.Entity.T_Paper, Domain">
+			<column name="PaperID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="Question" class="Domain.Entity.T_Question, Domain">
+			<column name="QuestionID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="Student" class="Domain.Entity.T_Student, Domain">
+			<column name="StudentID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

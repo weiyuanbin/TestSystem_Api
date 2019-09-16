@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7859BE64-912E-4A0C-A0E7-9058B9834744}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\T_Administrator.cs" />
+    <Compile Include="Entity\T_Class.cs" />
+    <Compile Include="Entity\T_ClassPaper.cs" />
+    <Compile Include="Entity\T_CompetitionQuestion.cs" />
+    <Compile Include="Entity\T_CompetitionRecord.cs" />
+    <Compile Include="Entity\T_CompetitionUser.cs" />
+    <Compile Include="Entity\T_ErrorQuestion.cs" />
+    <Compile Include="Entity\T_PaperStudent.cs" />
+    <Compile Include="Entity\T_Paper.cs" />
+    <Compile Include="Entity\T_PaperQestionRule.cs" />
+    <Compile Include="Entity\T_PaperQuestion.cs" />
+    <Compile Include="Entity\T_PaperQuestionRange.cs" />
+    <Compile Include="Entity\T_PaperRecord.cs" />
+    <Compile Include="Entity\T_PaperType.cs" />
+    <Compile Include="Entity\T_Question.cs" />
+    <Compile Include="Entity\T_QuestionLabel.cs" />
+    <Compile Include="Entity\T_QuestionType.cs" />
+    <Compile Include="Entity\T_Student.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\T_Administrator.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_Class.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_ClassPaper.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_CompetitionQuestion.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_CompetitionRecord.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_CompetitionUser.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_ErrorQuestion.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_PaperStudent.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_Paper.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_PaperQestionRule.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_PaperQuestion.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_PaperQuestionRange.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_PaperRecord.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_PaperType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_Question.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_QuestionLabel.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_QuestionType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\T_Student.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
